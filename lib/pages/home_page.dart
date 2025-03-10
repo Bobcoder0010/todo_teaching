@@ -15,31 +15,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocBuilder<TodoCubit, TodoState>(
-        builder: (context, state) {
-          return ListView.builder(
-            itemCount: state.todos.length,
-            itemBuilder: (context, index) {
-              final Todo todo = state.todos[index];
-              return Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Card(
-                  color: Colors.green[100],
-                  child: ListTile(
-                    trailing: Checkbox(
-                      value: todo.isCompleted,
-                      onChanged: (value) {},
-                    ),
-
-                    title: Text(todo.title),
-                    subtitle: Text(todo.description),
-                  ),
-                ),
-              );
-            },
-          );
-        },
-      ),
       floatingActionButton: FloatingActionButton(
         onPressed: _showDialog, // () => _showDialog()
         child: Icon(Icons.add),
